@@ -39,7 +39,124 @@
     </header>
 
     <main>
+        <section class="text-center mt-5">
+            <h1 class="mb-4">Some Important <span class="text-info">Questions</span></h1>
 
+            <div class="accordion w-50 m-auto" id="accordionPanelsStayOpenExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                            aria-controls="panelsStayOpen-collapseOne">
+                            <span class="text-primary fs-5 fw-bold">
+                                What is the difference between var, let, and,
+                                const?
+                            </span>
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                        aria-labelledby="panelsStayOpen-headingOne">
+                        <div class="accordion-body">
+                            Variables declared with <strong>var</strong> and <strong>const</strong> are scoped to the
+                            immediate function body. <br>
+                            Variables declared with the <strong>var</strong> keyword are hoisted. Hoisting means that
+                            the variable can be accessed in their enclosing scope even before they are declared. <br>
+                            Variables declared with the <strong>let</strong> keyword are block-scoped, which means the
+                            variables will have scope to the immediate enclosing block.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                            aria-controls="panelsStayOpen-collapseTwo">
+                            <span class="text-primary fs-5 fw-bold">
+                                What is the difference between the arrow and regular functions?
+                            </span>
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                        aria-labelledby="panelsStayOpen-headingTwo">
+                        <div class="accordion-body">
+                            <strong>1. Syntax:</strong>
+                            A programmer can get the same result as regular functions by writing a few lines of code
+                            using arrow functions.Curly brackets are not required if only one expression is present.
+                            <br>
+                            <strong>2. Arguments binding:</strong>
+                            Arrow functions do not have an arguments binding. However, they have access to the arguments
+                            object of the closest non-arrow parent function. Named and rest parameters are heavily
+                            relied upon to capture the arguments passed to arrow functions. <br>
+                            <strong>3. Use of this keyword:</strong>
+                            Unlike regular functions, arrow functions do not have their own <strong>this</strong>. The
+                            value of <strong>this</strong>
+                            inside an arrow function remains the same throughout the lifecycle of the function and is
+                            always bound to the value of this in the closest non-arrow parent function. <br>
+                            <strong>4. Using new keyword:</strong>
+                            Regular functions created using function declarations or expressions are constructible and
+                            callable. Since regular functions are constructible, they can be called using the new
+                            keyword.
+
+                            However, the arrow functions are only callable and not constructible, i.e arrow functions
+                            can never be used as constructor functions. Hence, they can never be invoked with the new
+                            keyword.
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                            aria-controls="panelsStayOpen-collapseThree">
+                            <span class="text-primary fs-5 fw-bold">
+                                What is the difference between map, forEach, filter, and find?
+                            </span>
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+                        aria-labelledby="panelsStayOpen-headingThree">
+                        <div class="accordion-body">
+                            <strong>.forEach:</strong>
+
+                            .forEach(), is used to execute the same code on every element in an array but does not
+                            change the array and it returns undefined. <br>
+                            <strong>.map():</strong>
+                            .map() executes the same code on every element in an array and returns a new array with the
+                            updated elements. <br>
+                            <strong>.filter():</strong>
+                            .filter() checks every element in an array to see if it meets a certain criteria and returns
+                            a new array with the elements that return truthy for the criteria.<br>
+                            <strong>.find()</strong>
+                            The find() method is used to find all the descendant elements of the selected element. It
+                            finds the element in the DOM tree by traversing through the root to leaf.
+
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
+                            aria-controls="panelsStayOpen-collapseFour">
+                            <span class="text-primary fs-5 fw-bold">
+                                Why should you use template string?
+                            </span>
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse"
+                        aria-labelledby="panelsStayOpen-headingFour">
+                        <div class="accordion-body">
+                            <strong>Template strings</strong> are a powerful feature of modern JavaScript released in
+                            ES6. It lets us insert/interpolate variables and expressions into strings without needing to
+                            concatenate like in older versions of JavaScript. It allows us to create strings that are
+                            complex and contain dynamic elements.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
