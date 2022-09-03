@@ -11,9 +11,9 @@ const displayNewsCategory = (newsCategories) => {
     const categoriesContainer = document.getElementById('categories-container');
     newsCategories.forEach(newsCategory => {
         const ul = document.createElement('ul');
-        
+        ul.classList.add('p-0')
         ul.innerHTML = `
-            <a class="text-decoration-none text-black fw-semibold" href=""> ${newsCategory.category_name} </a>
+            <a class="text-decoration-none text-black px-1 fw-semibold" href=""> ${newsCategory.category_name} </a>
                     
         `;
 
