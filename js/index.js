@@ -20,7 +20,7 @@ const displayNewsCategory = (newsCategories) => {
         console.log(newsCategory)
         ul.classList.add('p-0')
         ul.innerHTML = `
-            <p onclick="loadCategoryNews('${newsCategory.category_id}')" class="text-decoration-none m-0 text-black px-1 fw-semibold" style="cursor: pointer;"> ${newsCategory.category_name} </p>
+            <p onclick="loadCategoryNews('${newsCategory.category_id}','${newsCategory.category_name}')" class="text-decoration-none m-0 text-black px-1 fw-semibold" style="cursor: pointer;"> ${newsCategory.category_name} </p>
                     
         `;
 
@@ -30,24 +30,25 @@ const displayNewsCategory = (newsCategories) => {
 
 // ================news section =================
 
-const loadCategoryNews = async (category_id) => {
-    console.log(category_id)
+const loadCategoryNews = async (category_id,category_name) => {
+    console.log(category_id,category_name)
     toggleSpinner(true);
     const url = `https://openapi.programming-hero.com/api/news/category/${category_id}`;
     try {
         const response = await fetch(url)
         const data = await response.json();
-        displayNewsByCategory(data.data);
+        displayNewsByCategory(data.data,category_name);
     }
     catch (error) {
         console.log(error)
     }
 }
 
-const displayNewsByCategory = (allNews) => {
-    // console.log(allNews);
+const displayNewsByCategory = (allNews, category_name) => {
+    console.log(allNews,category_name);
     toggleSpinner(false)
     document.getElementById('found-items').innerText = allNews.length;
+    document.getElementById('category-name').innerText = category_name;
     const newsItems = document.getElementById('news-items');
     newsItems.innerHTML = '';
     allNews.sort((a, b) => b.total_view - a.total_view);
@@ -73,8 +74,8 @@ const displayNewsByCategory = (allNews) => {
                                 src="${newsItem.author.img}"
                                 alt="">
                             <div>
-                                <p class="m-0 fw-semibold">${newsItem.author.name}</p>
-                                <p class="m-0"><small>${newsItem.author.published_date}</small></p>
+                                <p class="m-0 fw-semibold">${newsItem.author.name === null ? 'No author found' : newsItem.author.name}</p>
+                                <p class="m-0"><small>${newsItem.author.published_date === null ? 'No date found' : newsItem.author.published_date}</small></p>
                             </div>
                         </div>
                         <div>
@@ -84,7 +85,7 @@ const displayNewsByCategory = (allNews) => {
                               </svg>
                               
 
-                            <span class="fw-semibold">${newsItem.total_view}</span>
+                            <span class="fw-semibold">${newsItem.total_view === null ? 'No views found' : newsItem.total_view}</span>
                         </div>
                         <div>
                             <button onclick="loadNews('${newsItem._id}')" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
