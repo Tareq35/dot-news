@@ -16,6 +16,7 @@
 
 <body>
     <header>
+        <!--=============== navbar section============== -->
         <nav class="navbar navbar-dark navbar-expand-lg bg-dark ">
             <div class="container">
                 <a class="navbar-brand fs-3 fw-bold" href="#"><span class="text-info">Dot</span> News</a>
@@ -38,16 +39,58 @@
         </nav>
     </header>
     <main>
+        <!-- =================categories section ============ -->
         <section class="container">
-                <div id="categories-container" class="d-flex flex-wrap my-4 justify-content-between">
-                    <!-- <ul class="my-4">
-                        <a class="text-decoration-none mx-2 text-black fw-semibold" href="">Breaking News</a> 
-                        <a class="text-decoration-none mx-2 text-black fw-semibold" href="">Regular News</a>
-                    </ul> -->
-                </div>
+            <div id="categories-container" class="d-flex flex-wrap my-4 justify-content-between">
+
+            </div>
         </section>
+        <!-- found items section  -->
         <section class="container">
-            <p>4 items found for the selected category</p>
+            <p class="fw-semibold"><span class="text-info" id="found-items">0</span> items found for the selected
+                category</p>
+
+        </section>
+        <!-- =============news section =========== -->
+        <section id="news-items" class="container my-5">
+
+            <!-- <div class="card mb-3 rounded-4">
+                <div class="d-md-flex align-items-center g-0 p-3">
+                    <div class="">
+                        <img src="https://i.ibb.co/QnwC4sG/unsplash-Eh-Tc-C9s-YXsw-11.png" alt="...">
+                    </div>
+                    <div class="">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Tucker Carlson Swears Vladimir Putin Is Winning The War In Ukraine</h5>
+
+                            <p class="card-text my-4">Tucker Carlson has rarely met a dictator's ass he didn't want to kiss, and Vladimir Putin is at the very top of that puckering up list. The Fox News host is something of a folk hero in Russia: Because of the pro-Putin propaganda he so often spews, the Kremlin has encouraged Russia's state TV to air as much of Tucker's face as possible — and they're certain to love his latest rant about how Putin is winning the war in Ukraine, which does not seem to be the case. But on Fox News, what Tucker says goes.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex gap-2">
+                                    <img class="rounded-circle"
+                                        src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=50&q=50"
+                                        alt="">
+                                    <div>
+                                        <p class="m-0 fw-semibold">Jane Cooper</p>
+                                        <p class="m-0"><small>jan 10, 2022</small></p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="25">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                      </svg>
+                                      
+
+                                    <span class="fw-semibold">1.5M</span>
+                                </div>
+                                <div>
+                                    <button class="btn btn-info text-white">Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
         </section>
     </main>
     <footer class="bg-black mt-5">
@@ -64,6 +107,48 @@
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
         crossorigin="anonymous"></script>
     <script src="./js/index.js"></script>
+
+
+
+    <!-- <div class="card mb-3 rounded-4">
+        <div class="d-md-flex align-items-center g-0 p-3">
+            <div class="">
+                <img src="${newsItem.thumbnail_url}" alt="...">
+            </div>
+            <div class="">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">${newsItem.title}</h5>
+
+                    <p class="card-text my-4">${newsItem.details}</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex gap-2">
+                            <img width="50" height="50" class="rounded-circle" src="${newsItem.author.img}" alt="">
+                            <div>
+                                <p class="m-0 fw-semibold">${newsItem.author.name}</p>
+                                <p class="m-0"><small>${newsItem.author.published_date}</small></p>
+                            </div>
+                        </div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" width="25">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+
+
+                            <span class="fw-semibold">${newsItem.total_view}</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+
+
 </body>
 
 </html>
