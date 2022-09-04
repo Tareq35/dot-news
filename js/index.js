@@ -50,7 +50,9 @@ const displayNewsByCategory = (allNews) => {
     document.getElementById('found-items').innerText = allNews.length;
     const newsItems = document.getElementById('news-items');
     newsItems.innerHTML = '';
+    allNews.sort((a, b) => b.total_view - a.total_view);
     allNews.forEach(newsItem => {
+
         const div = document.createElement('div');
         // div.classList.add('p-0')
         div.innerHTML = `
@@ -64,7 +66,7 @@ const displayNewsByCategory = (allNews) => {
                 <div class="card-body">
                     <h5 class="card-title fw-bold">${newsItem.title}</h5>
 
-                    <p class="card-text my-4">${newsItem.details.slice(0, 500)+('...')}</p>
+                    <p class="card-text my-4">${newsItem.details.slice(0, 500) + ('...')}</p>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="d-flex gap-2">
                             <img width="50" height="50" class="rounded-circle"
@@ -119,16 +121,16 @@ const displayNewsByCategory = (allNews) => {
 
         newsItems.appendChild(div);
     });
-    
+
 }
 
 
-const toggleSpinner = isLoading=> {
+const toggleSpinner = isLoading => {
     const loaderSection = document.getElementById('loader');
-    if(isLoading){
+    if (isLoading) {
         loaderSection.classList.remove('d-none')
     }
-    else{
+    else {
         loaderSection.classList.add('d-none')
     }
 }
@@ -149,7 +151,7 @@ const loadNews = async (_id) => {
 }
 const displayNews = (news) => {
     const exampleModal = document.getElementById('exampleModal');
-    exampleModal.innerHTML ='';
+    exampleModal.innerHTML = '';
     news.forEach(modal => {
         const div = document.createElement('div');
         div.innerHTML = `
