@@ -26,12 +26,13 @@ const displayNewsCategory = (newsCategories) => {
 
         categoriesContainer.appendChild(ul);
     })
+    loadCategoryNews('01','Breaking News');
 }
 
 // ================news section =================
 
 const loadCategoryNews = async (category_id,category_name) => {
-    console.log(category_id,category_name)
+    // console.log(category_id,category_name)
     toggleSpinner(true);
     const url = `https://openapi.programming-hero.com/api/news/category/${category_id}`;
     try {
@@ -151,12 +152,12 @@ const loadNews = async (_id) => {
     }
 }
 const displayNews = (news) => {
-    const exampleModal = document.getElementById('exampleModal');
-    exampleModal.innerHTML = '';
+    const modalDetails = document.getElementById('modal-details');
+    modalDetails.innerHTML = '';
     news.forEach(modal => {
         const div = document.createElement('div');
         div.innerHTML = `
-        <!-- <div class="card mb-3 rounded-4">
+        <div class="card mb-3 rounded-4">
         <div class="d-md-flex align-items-center g-0 p-3">
             <div class="">
                 <img src="${modal.thumbnail_url}" alt="...">
@@ -170,8 +171,8 @@ const displayNews = (news) => {
                         <div class="d-flex gap-2">
                             <img width="50" height="50" class="rounded-circle" src="${modal.author.img}" alt="">
                             <div>
-                                <p class="m-0 fw-semibold">${modal.author.name}</p>
-                                <p class="m-0"><small>${modal.author.published_date}</small></p>
+                                <p class="m-0 fw-semibold">${modal.author.name === null ? 'No author found' : modal.author.name}</p>
+                                <p class="m-0"><small>${modal.author.published_date === null ? 'No date found' : modal.author.published_date}</small></p>
                             </div>
                         </div>
                         <div>
@@ -184,15 +185,15 @@ const displayNews = (news) => {
                             </svg>
 
 
-                            <span class="fw-semibold">${modal.total_view}</span>
+                            <span class="fw-semibold">${modal.total_view === null ? 'No views found' : modal.total_view}</span>
                         </div>
 
                     </div>
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
         `;
-        exampleModal.appendChild(div);
+        modalDetails.appendChild(div);
     })
 }
